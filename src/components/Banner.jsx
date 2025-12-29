@@ -1,15 +1,29 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import React from 'react';
+import Swal from 'sweetalert2';
 
 export default function Banner() {
   const router = useRouter();
 
-  const handleBtn = () => {
-    const password = prompt('Enter your password');
-    if (password == '1234') {
-      console.log(router);
-      router.push('/dashboard')
+  const handleBtn = async () => {
+    const result = await Swal.fire({
+      title: 'Enter your password',
+      input: 'password',
+      inputLabel: 'Password',
+      inputPlaceholder: 'Enter your password',
+      inputAttributes: {
+        maxlength: '10',
+        autocapitalize: 'off',
+        autocorrect: 'off',
+      },
+      showCancelButton: true,
+    });
+
+    if (result.value === '1234') {
+      router.push('/dashboard');
+    } else if (result.isConfirmed) {
+      Swal.fire('Wrong password', 'Try again', 'error');
     }
   };
 
