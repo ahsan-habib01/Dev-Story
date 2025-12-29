@@ -4,7 +4,7 @@ export default function StoryCard({ story }) {
   const shortStory = story.story.split(' ').slice(0, 20).join(' ') + '...';
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-4 mb-6 border border-gray-200">
+    <div className=" shadow-md rounded-lg p-4 mb-6 border border-gray-200">
       {/* Image */}
       <div className="flex items-center gap-4">
         <img
@@ -13,14 +13,14 @@ export default function StoryCard({ story }) {
           className="w-16 h-16 rounded-full object-cover"
         />
         <div>
-          <h2 className="font-semibold text-lg text-black">{story.name}</h2>
-          <p className="text-sm text-gray-600">{story.designation}</p>
+          <h2 className="font-semibold text-lg ">{story.name}</h2>
+          <p className="text-sm text-gray-400">{story.designation}</p>
           <p className="text-sm text-blue-600">{story.company}</p>
         </div>
       </div>
 
       {/* Story */}
-      <p className="mt-4 text-gray-700 text-sm">{shortStory}</p>
+      <p className="mt-4 text-gray-500 text-sm">{shortStory}</p>
 
       {/* Button */}
       <Link

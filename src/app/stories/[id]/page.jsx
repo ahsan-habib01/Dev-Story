@@ -74,7 +74,7 @@ export default async function storyDetailsPage({ params }) {
 
   const story = devStories.find(story => story.id == id);
   if (!story) {
-    return <p>Story Not Found!</p>;
+    return <p className='mt-20 text-3xl text-center'>Story Not Found!</p>;
   }
 
   return (
@@ -88,22 +88,22 @@ export default async function storyDetailsPage({ params }) {
         />
         <div>
           <h1 className="text-2xl font-semibold">{story.name}</h1>
-          <p className="text-gray-700">{story.designation}</p>
+          <p className="text-gray-500">{story.designation}</p>
           <p className="text-blue-600">{story.company}</p>
-          <p className="text-gray-600 mt-1">Experience: {story.experience}</p>
+          <p className="text-gray-400 mt-1">Experience: {story.experience}</p>
         </div>
       </div>
 
       {/* Story */}
       <div className="mt-6">
         <h2 className="text-xl font-semibold mb-2">Learning Story</h2>
-        <p className="text-gray-700 leading-relaxed">{story.story}</p>
+        <p className="text-gray-300 leading-relaxed">{story.story}</p>
       </div>
 
       {/* About */}
       <div className="mt-6">
         <h2 className="text-xl font-semibold mb-2">About Developer</h2>
-        <p className="text-gray-700 leading-relaxed">{story.about}</p>
+        <p className="text-gray-300 leading-relaxed">{story.about}</p>
       </div>
 
       {/* Skills */}
@@ -113,7 +113,7 @@ export default async function storyDetailsPage({ params }) {
           {story.skills.map((skill, index) => (
             <span
               key={index}
-              className="bg-gray-200 px-3 py-1 rounded-full text-sm"
+              className="border-2 border-gray-50 px-3 py-1 rounded-full text-sm"
             >
               {skill}
             </span>

@@ -6,7 +6,7 @@ import NavLink from './NavLink';
 
 const Header = () => {
   const pathname = usePathname();
-  console.log(pathname);
+  // console.log(pathname);
   if (pathname.startsWith('/dashboard')) return <></>;
 
   return (
